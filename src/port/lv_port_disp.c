@@ -9,7 +9,6 @@
  *********************/
 #include "new_thread0.h"
 #include "lv_port_disp.h"
-#include "../../lvgl/src/drivers/display/renesas_glcdc/lv_renesas_glcdc.h"
 
 /*********************
  *      DEFINES
@@ -37,6 +36,33 @@ static void disp_init(void);
  *   GLOBAL FUNCTIONS
  **********************/
 
+static void glcdc_flush_finish_event(lv_event_t * event);
+
+static void glcdc_flush_finish_event(lv_event_t * event)
+{
+    FSP_PARAMETER_NOT_USED(event);
+    lv_display_t * disp;
+
+    if (LV_EVENT_FLUSH_FINISH == lv_event_get_code(event))
+    {
+        /* Enable Backlight */
+        R_IOPORT_PinWrite(&g_ioport_ctrl, LCD_BLEN, BSP_IO_LEVEL_HIGH);
+
+        disp = lv_event_get_target(event);
+
+        /* now the backlight in enabled, remove the event callback */
+        lv_display_remove_event_cb_with_user_data(disp, glcdc_flush_finish_event, NULL);
+    }
+}
+
+void lvgl_glcdc_callback(rm_lvgl_port_callback_args_t *p_arg)
+{
+    if (RM_LVGL_PORT_EVENT_UNDERFLOW == p_arg->event)
+    {
+       assert(0);
+    }
+}
+
 void lv_port_disp_init(void)
 {
     /*-------------------------
@@ -49,16 +75,18 @@ void lv_port_disp_init(void)
     /*------------------------------------
      * Create a display and set a flush_cb
      * -----------------------------------*/
-    lv_display_t * disp = lv_renesas_glcdc_direct_create();
-    FSP_PARAMETER_NOT_USED(disp);
+    fsp_err_t err;
+    err = RM_LVGL_PORT_Open(&g_lvgl_port_ctrl, &g_lvgl_port_cfg);
+    if (FSP_SUCCESS != err)
+    {
+        __BKPT(0);
+    }
 
-    /* Enable Backlight */
-    R_IOPORT_PinWrite(&g_ioport_ctrl, LCD_BLEN, BSP_IO_LEVEL_HIGH);
+    lv_display_add_event_cb(g_lvgl_port_ctrl.p_lv_display, glcdc_flush_finish_event, LV_EVENT_FLUSH_FINISH, NULL);
 }
 
 static void disp_init(void)
 {
-    fsp_err_t err;
 
     R_IOPORT_PinWrite(&g_ioport_ctrl, LCD_RESET, BSP_IO_LEVEL_HIGH);
 

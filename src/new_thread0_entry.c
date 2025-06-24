@@ -2,51 +2,14 @@
 #include "lvgl.h"
 #include "port/lv_port_disp.h"
 #include "port/lv_port_indev.h"
-#include "lvgl/demos/lv_demos.h"
+#include "lv_demos.h"
+#include "../ui/ui.h"
 
-static uint32_t idle_time_sum;
-static uint32_t non_idle_time_sum;
-static uint32_t task_switch_timestamp;
-static bool idle_task_running;
-
-#if 0
-void lv_freertos_task_switch_in(const char * name)
-{
-    if(strcmp(name, "IDLE")) idle_task_running = false;
-    else idle_task_running = true;
-
-    task_switch_timestamp = lv_tick_get();
-}
-
-void lv_freertos_task_switch_out(void)
-{
-    uint32_t elaps = lv_tick_elaps(task_switch_timestamp);
-    if(idle_task_running) idle_time_sum += elaps;
-    else non_idle_time_sum += elaps;
-}
-
-uint32_t lv_os_get_idle_percent(void)
-{
-    if(non_idle_time_sum + idle_time_sum == 0) {
-        LV_LOG_WARN("Not enough time elapsed to provide idle percentage");
-        return 0;
-    }
-
-    uint32_t pct = (idle_time_sum * 100) / (idle_time_sum + non_idle_time_sum);
-
-    non_idle_time_sum = 0;
-    idle_time_sum = 0;
-
-    return pct;
-}
+#if (0 == LV_USE_DEMO_BENCHMARK) && (0 == LV_USE_DEMO_MUSIC) && (0 == LV_USE_DEMO_KEYPAD_AND_ENCODER) && (0 == LV_USE_DEMO_WIDGETS)
+#define USE_LVGL_EDITOR 1
 #endif
 
-void timer_tick_callback(timer_callback_args_t *p_args)
-{
-    FSP_PARAMETER_NOT_USED(p_args);
-    lv_tick_inc(1);
-}
-
+lv_obj_t * settings;
 
 /* New Thread entry function */
 /* pvParameters contains TaskHandle_t */
@@ -66,34 +29,51 @@ void new_thread0_entry(void *pvParameters)
 
 #if (1 == LV_USE_DEMO_BENCHMARK)
     lv_demo_benchmark();
-#endif
-
-#if (1 == LV_USE_DEMO_MUSIC)
+#elif (1 == LV_USE_DEMO_MUSIC)
     lv_demo_music();
-#endif
-
-#if (1 == LV_USE_DEMO_KEYPAD_AND_ENCODER)
+#elif (1 == LV_USE_DEMO_KEYPAD_AND_ENCODER)
     lv_demo_keypad_encoder();
-#endif
-
-#if (1 == LV_USE_DEMO_STRESS)
+#elif (1 == LV_USE_DEMO_STRESS)
     lv_demo_stress();
-#endif
-
-#if (1 == LV_USE_DEMO_WIDGETS && 0 == LV_USE_DEMO_BENCHMARK)
+#elif (1 == LV_USE_DEMO_WIDGETS && 0 == LV_USE_DEMO_BENCHMARK)
     lv_demo_widgets();
+#elif (1 == USE_LVGL_EDITOR)
+
+    ui_init(NULL);
+
+    LV_IMAGE_DECLARE(img_bell_data);
+    LV_IMAGE_DECLARE(img_bluetooth_data);
+    LV_IMAGE_DECLARE(img_wifi_data);
+
+    img_bell      = &img_bell_data;
+    img_bluetooth = &img_bluetooth_data;
+    img_wifi      = &img_wifi_data;
+
+    settings = settings_create();
+    lv_screen_load(settings);
+
 #endif
-
-    err = R_GPT_Open(&g_timer0_ctrl, &g_timer0_cfg);
-    assert(FSP_SUCCESS == err);
-
-    err = R_GPT_Start(&g_timer0_ctrl);
-    assert(FSP_SUCCESS == err);
 
     /* TODO: add your own code here */
     while (1)
     {
       lv_timer_handler();
+#if (1 == INDEV_EVENT_DRIVEN)
+        BaseType_t status;
+
+        status = xSemaphoreTake( g_irq_binary_semaphore, 0);
+        if(pdTRUE == status)
+        {
+            lv_indev_t * indev_touchpad = NULL;
+            indev_touchpad = lv_indev_get_next(NULL);
+            if(NULL == indev_touchpad)
+            {
+                LV_ASSERT(0);
+            }
+            /* Call this anywhere you want to read the input device */
+            lv_indev_read(indev_touchpad);
+        }
+#endif
       vTaskDelay (1);
     }
 }
