@@ -5,8 +5,8 @@
         <DebugConsole-Enable>true</DebugConsole-Enable>
         <DebugConsole-LogFile/>
         <DebugConsole-IsLogging>false</DebugConsole-IsLogging>
-        <DebugConsole-COMport/>
-        <DebugConsole-Baudrate>0</DebugConsole-Baudrate>
+        <DebugConsole-COMport>COM9</DebugConsole-COMport>
+        <DebugConsole-Baudrate>115200</DebugConsole-Baudrate>
         <DebugConsole-EchoBack>true</DebugConsole-EchoBack>
         <DebugConsole-ClearBuffer>false</DebugConsole-ClearBuffer>
     </Config>
