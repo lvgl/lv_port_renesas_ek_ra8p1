@@ -5,7 +5,7 @@
 The Renesas EK-RA8P1 is an evaluation board for a high-end 1GHz ARM Cortex-M85 microcontroller
 with large external memory (128MB).
 It has a D/AVE 2D graphics accelerator which LVGL supports and is enabled in this project.
-The included display is 7.2" and has a resolution of 1024x600.
+The included display is 7" and has a resolution of 1024x600.
 There is an on-chip AI accelerator as well.
 
 ## Buy
@@ -51,11 +51,11 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 
 ### Display and Touch
 - **Resolution:** 1024x600
-- **Display Size:** 7.2"
-- **Interface:**
+- **Display Size:** 7"
+- **Interface:** Parallel RGB
 - **Color Depth:** 16-bit
-- **Technology:**
-- **DPI:** 165 px/inch
+- **Technology:** LCD
+- **DPI:** 170 px/inch
 - **Touch Pad:**
 
 ### Connectivity
