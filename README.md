@@ -16,9 +16,9 @@ There is an on-chip AI accelerator as well.
 
 The benchmark configuration is direct double-buffered with D/AVE 2D enabled and using aligned fonts.
 
-<!-- <a href="https://www.youtube.com/watch?v=XXXXXXXXXXXXXXXXXXXXXXX">
-    <img src="https://github.com/user-attachments/assets/87c1f2e5-0260-4772-b711-13fdab467474" width="75%">
-</a> -->
+<a href="https://www.youtube.com/watch?v=PoxDoQp51G8">
+    <img src="https://github.com/user-attachments/assets/e2d3b24c-3fb4-4dab-bf80-73f72c4f6781" width="75%">
+</a>
 
 | Name                      | Avg. CPU | Avg. FPS | Avg. time | render time | flush time |
 | :------------------------ | -------: | -------: | --------: | ----------: | ---------: |
