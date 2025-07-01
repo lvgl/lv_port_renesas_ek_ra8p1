@@ -10,7 +10,7 @@ There is an on-chip AI accelerator as well.
 
 ## Buy
 
-(coming soon...)
+You can purchase an EK-RA8P1 from [here](https://www.renesas.com/en/design-resources/boards-kits/ek-ra8p1).
 
 ## Benchmark
 
