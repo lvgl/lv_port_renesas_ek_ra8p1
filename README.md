@@ -90,8 +90,8 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
     cd ~/.local/share/renesas/e2_studio
     unzip ~/Downloads/FSP_Packs_v6.0.0.zip
     ```
-    The directory structure of the ZIP structure may overlap with some of the structure
-    of the e2_studio install loction. This is expected. The `unzip` process will
+    The directory structure in the ZIP overlaps with the
+    e2_studio install loction. This is expected. The `unzip` process will
     update the directory structure with the new FSP files from the ZIP and preserve any existing FSP packs.
 
 ### Run the project
@@ -102,7 +102,7 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 - Open e2 studio and go to **File > Open Projects from File System...**. Click "Directory"
   and navigate to the cloned project and then click "Finish".
 - Click the hammer to build the project. If it is greyed-out, first single-click the project
-  "lv_ek_rza3m" in the left sidebar and the hammer should become clickable.
+  "lv_ek_ra8p1" in the left sidebar and the hammer should become clickable.
 - To upload and run the project, click the bug (debug) icon. The debugger will break (stop execution)
   at the beginning. Click the "Resume" button to continue execution.
 
