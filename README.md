@@ -46,7 +46,7 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 ## Specification
 
 ### CPU and Memory
-- **MCU:** 1GHz ARM Cortex-M85 and 250MHz Cortex-M33
+- **MCU:** 1GHz ARM Cortex-M85 and 250MHz ARM Cortex-M33
 - **RAM:** 1872KB internal, 128MB external
 - **Flash:** 1MB
 - **GPU:** D/AVE 2D
@@ -58,7 +58,7 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 - **Color Depth:** 16-bit
 - **Technology:** LCD
 - **DPI:** 170 px/inch
-- **Touch Pad:**
+- **Touch Pad:** Capacitive
 
 ### Connectivity
 - 2x USB host or device
@@ -93,7 +93,7 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
     unzip ~/Downloads/FSP_Packs_v6.0.0.zip
     ```
     The directory structure in the ZIP overlaps with the
-    e2_studio install loction. This is expected. The `unzip` process will
+    e2_studio install location. This is expected. The `unzip` process will
     update the directory structure with the new FSP files from the ZIP and preserve any existing FSP packs.
 
 ### Run the project
@@ -107,6 +107,11 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
   "lv_ek_ra8p1" in the left sidebar and the hammer should become clickable.
 - To upload and run the project, click the bug (debug) icon. The debugger will break (stop execution)
   at the beginning. Click the "Resume" button to continue execution.
+- To upload the optimized Release version of the build, open the dropdown next to the bug
+  icon and click "Debug Configurations...". Change the "C/C++ Application:" to start with
+  "Release/" instead of "Debug/". It's also recommended to set the "Build Configuration:"
+  to "Release". Remember to change these settings back if you want a good experience debugging
+  the app.
 
 ### Debugging
 - In the previous section, the project was run using the debugger.
@@ -115,11 +120,17 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 
 ## Notes
 
+e2 studio has a configurator to adjust configuration settings. If you want to change an
+LVGL config, first check if it's an option present in the FSP Configuratior. To get there,
+open the "FSP Configuration" perspective by clicking the tab in the very top-right corner
+of the window. Next, open "configuration.xml" by double-clicking it in the "Project Explorer".
+When you are done, make sure to click "Generate Project Content".
+For all other configs, `src/lv_conf_user.h` is the file to edit. `ra_cfg\fsp_cfg\lvgl\lvgl\lv_conf.h` includes this file
+and has some defaults which will be set if they are not explicitly set in `src/lv_conf_user.h`.
+To see all the possible LVGL configs, look at `./ra/lvgl/lvgl/lv_conf_template.h`.
+
 LVGL comes from the FSP so the source code will appear upon building. It can be edited
 in-place, but changes will be lost if a "clean" is performed.
-
-`src/lv_conf_user.h` is the file to edit to change LVGL configs. `ra_cfg\fsp_cfg\lvgl\lvgl\lv_conf.h` includes this file
-and has some defaults which will be set if they are not explicitly set in `src/lv_conf_user.h`.
 
 LVGL logging and `printf` goes to a virtual serial port with baud 115200 over the USB debug connection.
 You can open any serial terminal on your PC to view it.
