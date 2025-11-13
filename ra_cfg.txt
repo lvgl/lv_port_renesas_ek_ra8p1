@@ -57,7 +57,7 @@ FSP Configuration
     Clocks: MSTP Change Delays: Enabled
     Clocks: Settling Delay (us): 150
     Main Oscillator Wait Time: 8163 cycles
-    Cache settings: Data cache: Disabled
+    Cache settings: Data cache: Enabled
     Cache settings: Data cache forced write-through: Disabled
     
   RA8P1 Device Options
@@ -250,8 +250,8 @@ FSP Configuration
     BCLKA Src: PLL1R
     BCLKA Div /3
     SDCLK Enabled
-    EBCLK Src: BCLK (Synchronous)
-    EBCLK Div /2
+    EBCLK Src: BCLKA (Asynchronous)
+    EBCLK Disabled
     CLKOUT Src: HOCO
     CLKOUT Div /1
     SCICLK Src: PLL2R
@@ -869,6 +869,8 @@ FSP Configuration
   User Event Links
     
   Linker Section Mappings
+    *(.bss.g_heap): RAM Uninitialized
+    *(.bss.g_main_stack): RAM Uninitialized
     
   Module "I/O Port (r_ioport)"
     Parameter Checking: Default (BSP)

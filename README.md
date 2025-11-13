@@ -24,23 +24,23 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
 
 | Name                      | Avg. CPU | Avg. FPS | Avg. time | render time | flush time |
 | :------------------------ | -------: | -------: | --------: | ----------: | ---------: |
-| Empty screen              | 72%      | 29       | 21        | 14          | 7          |
-| Moving wallpaper          | 93%      | 27       | 33        | 32          | 1          |
-| Single rectangle          | 44%      | 29       | 9         | 1           | 8          |
-| Multiple rectangles       | 48%      | 29       | 15        | 7           | 8          |
-| Multiple RGB images       | 54%      | 29       | 14        | 7           | 7          |
-| Multiple ARGB images      | 63%      | 29       | 16        | 9           | 7          |
-| Rotated ARGB images       | 47%      | 30       | 13        | 6           | 7          |
-| Multiple labels           | 93%      | 24       | 34        | 29          | 5          |
-| Screen sized text         | 98%      | 8        | 114       | 103         | 11         |
-| Multiple arcs             | 97%      | 29       | 28        | 17          | 11         |
-| Containers                | 87%      | 28       | 23        | 12          | 11         |
-| Containers with overlay   | 95%      | 14       | 52        | 43          | 9          |
-| Containers with opa       | 84%      | 28       | 22        | 14          | 8          |
-| Containers with opa_layer | 97%      | 9        | 97        | 85          | 12         |
-| Containers with scrolling | 98%      | 14       | 65        | 55          | 10         |
-| Widgets demo              | 98%      | 14       | 52        | 43          | 9          |
-| All scenes avg.           | 79%      | 23       | 37        | 29          | 8          |
+| Empty screen              | 91%      | 57       | 14        | 6           | 8          |
+| Moving wallpaper          | 96%      | 29       | 32        | 20          | 12         |
+| Single rectangle          | 90%      | 58       | 14        | 0           | 14         |
+| Multiple rectangles       | 91%      | 58       | 14        | 3           | 11         |
+| Multiple RGB images       | 91%      | 57       | 11        | 3           | 8          |
+| Multiple ARGB images      | 92%      | 57       | 10        | 3           | 7          |
+| Rotated ARGB images       | 90%      | 58       | 11        | 2           | 9          |
+| Multiple labels           | 91%      | 58       | 15        | 9           | 6          |
+| Screen sized text         | 97%      | 26       | 35        | 32          | 3          |
+| Multiple arcs             | 94%      | 58       | 14        | 8           | 6          |
+| Containers                | 71%      | 58       | 11        | 3           | 8          |
+| Containers with overlay   | 94%      | 29       | 33        | 28          | 5          |
+| Containers with opa       | 70%      | 58       | 11        | 3           | 8          |
+| Containers with opa_layer | 89%      | 44       | 19        | 13          | 6          |
+| Containers with scrolling | 95%      | 29       | 31        | 24          | 7          |
+| Widgets demo              | 96%      | 29       | 30        | 20          | 10         |
+| All scenes avg.           | 89%      | 47       | 19        | 11          | 8          |
 
 
 ## Specification

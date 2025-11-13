@@ -35,6 +35,8 @@
     #define LV_MEM_SIZE (1024 * 1024U)          /**< [bytes] */
 #endif  /*LV_USE_STDLIB_MALLOC == LV_STDLIB_BUILTIN*/
 
+#define LV_DEF_REFR_PERIOD  16      /**< [ms] */
+
 /** The target buffer size for simple layer chunks. */
 #define LV_DRAW_LAYER_SIMPLE_BUF_SIZE    (256 * 1024)    /**< [bytes]*/
 
