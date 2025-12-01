@@ -79,18 +79,18 @@ The benchmark configuration is direct double-buffered with D/AVE 2D enabled and 
   - Ensure "Renesas FSP Smart Configurator Core" and "Renesas FSP Smart Configurator ARM"
     are included in your selection of "Customize Features".
   - Ensure "LLVM Embedded Toolchain for Arm 18.1.3" is selected.
-- Install FSP Packs. v6.0.0 is required.
-  - On Windows, simply download FSP_Packs_v6.0.0.exe
+- Install FSP Packs. v6.2.0 is required.
+  - On Windows, simply download FSP_Packs_v6.2.0.exe
     [from here](https://github.com/renesas/fsp/releases) under "Assets" for the desired release.
     Run the installer and follow the prompts.
-  - On Linux, download FSP_Packs_v6.0.0.zip
+  - On Linux, download FSP_Packs_v6.2.0.zip
     [from here](https://github.com/renesas/fsp/releases) under "Assets" for the desired release.
     Locate the e2 studio install location. If it is `~/.local/share/renesas/e2_studio`
-    and the ZIP download is `~/Downloads/FSP_Packs_v6.0.0.zip`, unzip the file
+    and the ZIP download is `~/Downloads/FSP_Packs_v6.2.0.zip`, unzip the file
     with the following commands:
     ```shell
     cd ~/.local/share/renesas/e2_studio
-    unzip ~/Downloads/FSP_Packs_v6.0.0.zip
+    unzip ~/Downloads/FSP_Packs_v6.2.0.zip
     ```
     The directory structure in the ZIP overlaps with the
     e2_studio install location. This is expected. The `unzip` process will

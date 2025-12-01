@@ -217,41 +217,18 @@ static void img_draw_core(lv_draw_task_t * t, const lv_draw_image_dsc_t * draw_d
         d2_settextureoperation(u->d2_handle, d2_to_copy, d2_to_copy, d2_to_copy, d2_to_copy);
     }
 
-    if(LV_OPA_MIN < draw_dsc->recolor_opa )
-    {
-        d2_s32 ret;
-        ret = d2_settextureoperation(u->d2_handle, d2_to_multiply, d2_to_replace, d2_to_replace, d2_to_replace );
-        LV_ASSERT(D2_OK == ret);
-
-        ret = d2_settexopparam(u->d2_handle, d2_cc_red, draw_dsc->recolor.red, 0);
-        LV_ASSERT(D2_OK == ret);
-
-        ret = d2_settexopparam(u->d2_handle, d2_cc_green, draw_dsc->recolor.green, 0);
-        LV_ASSERT(D2_OK == ret);
-
-        ret = d2_settexopparam(u->d2_handle, d2_cc_blue, draw_dsc->recolor.blue, 0);
-        LV_ASSERT(D2_OK == ret);
-
-        ret = d2_settexopparam(u->d2_handle, d2_cc_alpha, draw_dsc->recolor_opa, 0);
-         LV_ASSERT(D2_OK == ret);
-    }
-
     if(LV_BLEND_MODE_NORMAL == draw_dsc->blend_mode) { /**< Simply mix according to the opacity value*/
         d2_setblendmode(u->d2_handle, d2_bm_alpha, d2_bm_one_minus_alpha);  //direct linear blend
-
     }
     else if(LV_BLEND_MODE_ADDITIVE == draw_dsc->blend_mode) { /**< Add the respective color channels*/
         /* TODO */
         d2_setblendmode(u->d2_handle, d2_bm_alpha, d2_bm_one);  //Additive blending
-
     }
     else if(LV_BLEND_MODE_SUBTRACTIVE == draw_dsc->blend_mode) { /**< Subtract the foreground from the background*/
         /* TODO */
-
     }
     else { //LV_BLEND_MODE_MULTIPLY,   /**< Multiply the foreground and background*/
         /* TODO */
-
     }
 
     lv_point_t p[4] = { //Points in clockwise order
