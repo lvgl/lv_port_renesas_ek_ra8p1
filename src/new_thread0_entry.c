@@ -4,6 +4,7 @@
 #include "port/lv_port_indev.h"
 #include "lv_demos.h"
 #include "../ui/ui.h"
+#include "ospi_flash.h"
 
 #if (0 == LV_USE_DEMO_BENCHMARK) && (0 == LV_USE_DEMO_MUSIC) && (0 == LV_USE_DEMO_KEYPAD_AND_ENCODER) && (0 == LV_USE_DEMO_WIDGETS)
 #define USE_LVGL_EDITOR 1
@@ -20,6 +21,8 @@ void new_thread0_entry(void *pvParameters)
 
     err = R_SCI_B_UART_Open(&g_uart0_ctrl, &g_uart0_cfg);
     assert(FSP_SUCCESS == err);
+
+    init_opsi_flash();
 
     lv_init();
 

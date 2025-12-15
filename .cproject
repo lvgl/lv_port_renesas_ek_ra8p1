@@ -19,7 +19,7 @@
 				<option id="toolchain.enable" value="true"/>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.renesas.cdt.managedbuild.llvm.arm.configuration.debug.695375814" name="Debug" parent="com.renesas.cdt.managedbuild.llvm.arm.configuration.debug">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.renesas.cdt.managedbuild.llvm.arm.configuration.debug.695375814" name="Debug" parent="com.renesas.cdt.managedbuild.llvm.arm.configuration.debug" postbuildStep="${workspace_loc:/${ProjName}}/generate_ospi_srecord.bat ${ProjName}">
 					<folderInfo id="com.renesas.cdt.managedbuild.llvm.arm.configuration.debug.695375814." name="/" resourcePath="">
 						<toolChain id="com.renesas.cdt.managedbuild.llvm.arm.toolchain.debug.1191013639" name="LLVM for ARM" superClass="com.renesas.cdt.managedbuild.llvm.arm.toolchain.debug">
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.cpu.printsize.424793707" name="Print Size" superClass="com.renesas.cdt.managedbuild.llvm.core.option.cpu.printsize" value="true" valueType="boolean"/>
@@ -1314,6 +1314,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387.1552342049" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920.547021390" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496.597946779" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.273342834" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1381558857"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.428915867" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.627084970"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.2074896967" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1967961533">
@@ -1368,6 +1369,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387.273793249" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920.501016774" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496.1334092987" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1927927382" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1381558857"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.2043586591" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.627084970"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1234840319" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1967961533">
@@ -1477,6 +1479,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387.1045152325" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.1566686387"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920.793133804" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1355302920"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496.1980574462" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.1758825496"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1614876436" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1381558857"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.650037715" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.627084970"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.183677984" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1967961533">
@@ -2531,6 +2534,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151.1206499376" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510.1516969459" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941.904822392" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.2000094849" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1768716210"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.1509560520" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.926306999"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1012047742" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.131912600">
@@ -2585,6 +2589,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151.862684819" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510.1650014662" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941.1239426259" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.713652934" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1768716210"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.114850194" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.926306999"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1223223763" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.131912600">
@@ -2694,6 +2699,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151.514079375" name="Other Flags" superClass="com.renesas.cdt.managedbuild.llvm.core.option.warnings.otherFlags.952552151"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510.1561112672" name="ARM family" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.family.1698753510"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941.1037584312" name="Float ABI" superClass="com.renesas.cdt.managedbuild.llvm.arm.option.cpu.fpu.379918941"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.llvm.core.targetPlatform" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.llvm.core.targetPlatform"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.451343950" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.smsAsm.1768716210"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.867039850" name="Library Generator" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.libgen.926306999"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.1359799009" name="Compiler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.compiler.131912600">
