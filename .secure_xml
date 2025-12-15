@@ -62,9 +62,9 @@
     <node id="board.clock.pll1r.display" option="board.clock.pll1r.display.value"/>
     <node id="board.clock.pll2.source" option="board.clock.pll2.source.xtal"/>
     <node id="board.clock.pll2.div" option="board.clock.pll2.div.3"/>
-    <node id="board.clock.pll2.mul" option="board.clock.pll2.mul.300_00"/>
+    <node id="board.clock.pll2.mul" option="board.clock.pll2.mul.266_00"/>
     <node id="board.clock.pll2.display" option="board.clock.pll2.display.value"/>
-    <node id="board.clock.pll2p.div" option="board.clock.pll2p.div.4"/>
+    <node id="board.clock.pll2p.div" option="board.clock.pll2p.div.8"/>
     <node id="board.clock.pll2p.display" option="board.clock.pll2p.display.value"/>
     <node id="board.clock.pll2q.div" option="board.clock.pll2q.div.3"/>
     <node id="board.clock.pll2q.display" option="board.clock.pll2q.display.value"/>
@@ -126,14 +126,14 @@
     <node id="board.clock.i3cclk.source" option="board.clock.i3cclk.source.pll2q"/>
     <node id="board.clock.i3cclk.div" option="board.clock.i3cclk.div.5"/>
     <node id="board.clock.i3cclk.display" option="board.clock.i3cclk.display.value"/>
-    <node id="board.clock.uck.source" option="board.clock.uck.source.pll2r"/>
+    <node id="board.clock.uck.source" option="board.clock.uck.source.disabled"/>
     <node id="board.clock.uck.div" option="board.clock.uck.div.10"/>
     <node id="board.clock.uck.display" option="board.clock.uck.display.value"/>
-    <node id="board.clock.u60ck.source" option="board.clock.u60ck.source.pll2r"/>
+    <node id="board.clock.u60ck.source" option="board.clock.u60ck.source.disabled"/>
     <node id="board.clock.u60ck.div" option="board.clock.u60ck.div.8"/>
     <node id="board.clock.u60ck.display" option="board.clock.u60ck.display.value"/>
-    <node id="board.clock.octaspiclk.source" option="board.clock.octaspiclk.source.pll1q"/>
-    <node id="board.clock.octaspiclk.div" option="board.clock.octaspiclk.div.1"/>
+    <node id="board.clock.octaspiclk.source" option="board.clock.octaspiclk.source.pll2p"/>
+    <node id="board.clock.octaspiclk.div" option="board.clock.octaspiclk.div.3"/>
     <node id="board.clock.octaspiclk.display" option="board.clock.octaspiclk.display.value"/>
     <node id="board.clock.octaspiclk.om_sclk.display" option="board.clock.octaspiclk.om_sclk.display.value"/>
     <node id="board.clock.adcclk.source" option="board.clock.adcclk.source.pll2r"/>
@@ -145,7 +145,7 @@
     <node id="board.clock.eswphyclk.source" option="board.clock.eswphyclk.source.pll1p"/>
     <node id="board.clock.eswphyclk.div" option="board.clock.eswphyclk.div.2"/>
     <node id="board.clock.eswphyclk.display" option="board.clock.eswphyclk.display.value"/>
-    <node id="board.clock.ethphyclk.source" option="board.clock.ethphyclk.source.pll2q"/>
+    <node id="board.clock.ethphyclk.source" option="board.clock.ethphyclk.source.disabled"/>
     <node id="board.clock.ethphyclk.div" option="board.clock.ethphyclk.div.32"/>
     <node id="board.clock.ethphyclk.display" option="board.clock.ethphyclk.display.value"/>
   </raClockConfiguration>
