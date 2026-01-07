@@ -1029,7 +1029,7 @@ FSP Configuration
     Row Addressing Support: Disable
     
   FreeRTOS
-    General: Custom FreeRTOSConfig.h: 
+    General: Custom FreeRTOSConfig.h: User_FreeRTOSConfig.h
     General: Use Preemption: Enabled
     General: Use Port Optimised Task Selection: Disabled
     General: Use Tickless Idle: Disabled
@@ -1042,7 +1042,7 @@ FSP Configuration
     General: Max Priorities: 5
     General: Minimal Stack Size: 128
     General: Max Task Name Len: 16
-    Stats: Use Trace Facility: Disabled
+    Stats: Use Trace Facility: Enabled
     Stats: Use Stats Formatting Functions: Disabled
     General: Use 16-bit Ticks: Disabled
     General: Idle Should Yield: Enabled
@@ -1375,6 +1375,8 @@ FSP Configuration
       General: DS Auto-calibration Pattern Address: 0x90000000
       Command Sets: Custom Table: Table Pointer: 
       Command Sets: Custom Table: Table Length: 0
+      Command Sets: Custom Table: Erase Command Table: 
+      Command Sets: Custom Table: Erase Command Table Length: 0
       Command Sets: Erase Sizes: Sector Erase: 4096
       Command Sets: Erase Sizes: Block Erase: 65536
       Command Sets: Initial Mode: Protocol Mode: SPI (1S-1S-1S)
