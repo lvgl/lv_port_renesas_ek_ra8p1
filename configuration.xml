@@ -908,7 +908,7 @@
     <config id="config.lvgl.lvgl">
       <property id="config.lvgl.lvgl.custom_lv_conf" value="lv_conf_user.h"/>
       <property id="config.lvgl.lvgl.lv_color_depth" value="16"/>
-      <property id="config.lvgl.lvgl.lv_mem_size" value="0x20000"/>
+      <property id="config.lvgl.lvgl.lv_mem_size" value="0x40000"/>
       <property id="config.lvgl.lvgl.lv_draw_layer_simple_buf_size" value="0x6000"/>
       <property id="config.lvgl.lvgl.lv_draw_layer_max_memory" value="0"/>
       <property id="config.lvgl.lvgl.lv_draw_thread_stack_size" value="0x2000"/>
